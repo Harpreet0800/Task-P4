@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
@@ -16,16 +15,13 @@ const navigate = useNavigate();
     setMessage("");
   if (!name.includes(" ")) {
   setMessage("Enter your first and last name");
-  return;
-    }
+  return;}
     if (password !== confirmPassword) {
       setMessage("Enter the same Password");
-      return;
-    }
+      return;}
     if (password.length < 8) {
       setMessage("The Password must contain at least 8 characters");
-      return;
-    }
+      return;}
     try {
       const userQuery = query(
         collection(db, "users"),
